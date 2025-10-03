@@ -5,7 +5,7 @@ void setup()
 void draw()
 {
   background(197);
-  Die bob = new Die(x,y);
+  Die bob = new Die(10, 50);
   bob.show();
 }
 void mousePressed()
@@ -26,10 +26,23 @@ class Die //models one single dice cube
   }
   void roll()
   {
-    //your code here
+    rollDie = (int)(Math.random() + 3);
   }
   void show()
   {
-    //your code here
+    rect( myX, myY, 50, 50, 8);  
+    fill(255,0,0);
+    if(rollDie == 1){
+      ellipse(myX+25, myY+25, 10, 10);
+    }
+    if(rollDie == 2){
+      ellipse(myX+12.5, myY+12.5, 10, 10);
+      ellipse(myX+37.5, myY+37.5, 10, 10);
+    }
+     if(rollDie == 3){
+      ellipse(myX+12.5, myY+12.5, 10, 10);
+      ellipse(myX+37.5, myY+12.5, 10, 10);
+      ellipse(myX+25, myY+37.6, 10, 10);
+    }
   }
 }
